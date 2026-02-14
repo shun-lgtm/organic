@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「お腹が弱い子」で終わらせない ― 慢性的な下痢の原因が、内視鏡検査でわかるまで | KINS WITH 動物病院</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-text-muted: #999;
+    --color-bg: #fff;
+    --color-bg-gray: #f7f7f7;
+    --color-border: #e5e5e5;
+    --color-accent: #c4725a;
+    --color-accent-light: #faf0ec;
+    --color-owner-bubble: #fff8e8;
+    --color-column-bg: #faf0ec;
+    --color-column-border: #c4725a;
+    --color-interview-bg: #eef4ff;
+    --color-interview-border: #7a9ec7;
+    --max-width: 740px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.9;
+    font-size: 15.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Header (simplified) ─── */
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .site-logo {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-text);
+  }
+  .site-logo span {
+    font-weight: 300;
+    color: var(--color-text-light);
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  .header-nav {
+    display: flex;
+    gap: 20px;
+    font-size: 12.5px;
+    color: var(--color-text-light);
+  }
+  .header-nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ─── Article Container ─── */
+  .article-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ─── Breadcrumb ─── */
+  .breadcrumb {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+  }
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  /* ─── Article Title ─── */
+  .article-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ─── Meta ─── */
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+
+  /* ─── Tags ─── */
+  .article-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .tag {
+    font-size: 12px;
+    padding: 4px 12px;
+    background: var(--color-bg-gray);
+    border-radius: 3px;
+    color: var(--color-text-light);
+    text-decoration: none;
+  }
+
+  /* ─── Hero Image ─── */
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #d8e8e8, #b8d0d0);
+    border-radius: 6px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 13px;
+  }
+
+  /* ─── Doctor Profile ─── */
+  .doctor-profile {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+    background: var(--color-bg-gray);
+    border-radius: 6px;
+    margin-bottom: 40px;
+  }
+  .doctor-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #c8d8d8;
+    flex-shrink: 0;
+  }
+  .doctor-info {
+    font-size: 13px;
+  }
+  .doctor-name {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .doctor-title {
+    color: var(--color-text-light);
+    font-size: 12.5px;
+  }
+
+  /* ─── TOC ─── */
+  .toc {
+    background: var(--color-bg-gray);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin-bottom: 44px;
+  }
+  .toc-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    padding: 0;
+  }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 6px 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .toc li::before {
+    content: counter(toc-counter) ".";
+    margin-right: 8px;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  .toc a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .toc a:hover {
+    color: var(--color-accent);
+  }
+
+  /* ─── Section Headings ─── */
+  .section-heading {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 52px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-accent);
+    letter-spacing: -0.01em;
+  }
+
+  .sub-heading {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 32px 0 14px;
+  }
+
+  /* ─── Body Text ─── */
+  .article-body p {
+    margin-bottom: 22px;
+    line-height: 2;
+  }
+
+  .article-body strong {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  /* ─── Section Image ─── */
+  .section-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, #e0e8e8, #c8d8d8);
+    border-radius: 6px;
+    margin: 20px 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 13px;
+  }
+
+  /* ─── Owner Speech Bubble ─── */
+  .owner-comment {
+    position: relative;
+    background: var(--color-owner-bubble);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 28px 0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .owner-comment::before {
+    content: '';
+    position: absolute;
+    left: 36px;
+    top: -8px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-owner-bubble);
+    transform: rotate(45deg);
+  .owner-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #d4a84a;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+  .owner-comment-body {
+    flex: 1;
+    font-size: 14.5px;
+    line-height: 1.85;
+    position: relative;
+    z-index: 1;
+  }
+  .owner-label {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  /* ─── Medical Info Column ─── */
+  .medical-column {
+    background: var(--color-column-bg);
+    border-left: 4px solid var(--color-column-border);
+    border-radius: 0 6px 6px 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  .medical-column-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #a05a42;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .medical-column-title::before {
+    content: '📋';
+    font-size: 14px;
+  }
+  .medical-column p {
+    font-size: 13.5px;
+    line-height: 1.85;
+    margin-bottom: 8px;
+    color: var(--color-text-light);
+  }
+  .medical-column p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── Interview Placeholder ─── */
+  .interview-slot {
+    background: var(--color-interview-bg);
+    border: 2px dashed var(--color-interview-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-size: 13px;
+    color: #4a6f94;
+  }
+  .interview-slot-title {
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .interview-slot-title::before {
+    content: '🎤';
+  }
+  .interview-slot ul {
+    margin: 8px 0 0 20px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ─── Mock Notice ─── */
+  .mock-notice {
+    background: #fff3f3;
+    border: 1px solid #e8c0c0;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 12.5px;
+    color: #996060;
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .mock-notice strong {
+    color: #884040;
+  }
+
+  /* ─── CTA Box ─── */
+  .cta-box {
+    background: var(--color-accent-light);
+    border-radius: 8px;
+    padding: 28px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .cta-box p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+
+  /* ─── Footer (simplified) ─── */
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 28px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 600px) {
+    .article-title {
+      font-size: 21px;
+    }
+    .section-heading {
+      font-size: 18px;
+    }
+    .owner-comment {
+      padding: 16px 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="site-logo">KINS WITH 動物病院<span>消化器内科</span></div>
+  <nav class="header-nav">
+    <a href="#">診療のこと</a>
+    <a href="#">症例</a>
+    <a href="#">診療の記録</a>
+  </nav>
+</header>
+
+<main class="article-container">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="#">KINS WITH 動物病院</a> ＞ <a href="#">診療の記録</a> ＞ 本記事
+  </div>
+
+  <!-- Title -->
+  <h1 class="article-title">「お腹が弱い子」で終わらせない ―<br>慢性的な下痢の原因が、内視鏡検査でわかるまで</h1>
+
+  <!-- Meta -->
+  <div class="article-meta">
+    <span>2026.XX.XX</span>
+  </div>
+
+  <!-- Tags -->
+  <div class="article-tags">
+    <a class="tag" href="#">犬</a>
+    <a class="tag" href="#">お腹</a>
+    <a class="tag" href="#">治療記</a>
+    <a class="tag" href="#">消化器内科</a>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero-image">※ イメージ写真</div>
+
+  <!-- Mock Notice -->
+  <div class="mock-notice">
+    <strong>📌 これはモック記事です</strong><br>
+    許可取り・構成確認用に作成したものです。症例情報は仮のもので、実際の患者さんの情報は含まれていません。<br>
+    黄色い枠の部分が「インタビューで埋める箇所」です。
+  </div>
+
+  <!-- Doctor Profile -->
+  <div class="doctor-profile">
+    <div class="doctor-avatar"></div>
+    <div class="doctor-info">
+      <div class="doctor-name">●● 先生</div>
+      <div class="doctor-title">KINS WITH 動物病院　消化器内科</div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#sec1">「お腹が弱い子」として来院したハナちゃんのこと</a></li>
+      <li><a href="#sec2">1年以上続いた下痢。かかりつけでは「体質」と言われていた</a></li>
+      <li><a href="#sec3">「このままじゃダメだ」と思ったきっかけ</a></li>
+      <li><a href="#sec4">まず行った検査と、最初の治療</a></li>
+      <li><a href="#sec5">内視鏡検査で、原因がわかった</a></li>
+      <li><a href="#sec6">治療を始めて、変わっていったこと</a></li>
+      <li><a href="#sec7">同じ悩みを持つ飼い主さんへ</a></li>
+    </ol>
+  </nav>
+
+  <!-- ─── Article Body ─── -->
+  <div class="article-body">
+
+    <!-- Section 1 -->
+    <h2 class="section-heading" id="sec1">「お腹が弱い子」として来院したハナちゃんのこと</h2>
+
+    <div class="section-image">※ 写真イメージ（待合室、または診察室）</div>
+
+    <p>トイプードルのハナちゃん（仮名・6歳・避妊済み）が当院に来たのは、2025年の春のことでした。飼い主さんの主訴は「1年以上続く慢性的な軟便・下痢」。何度もかかりつけの病院に通い、フードを変え、整腸剤を試し、それでも良くならない状態が続いていたそうです。</p>
+
+    <div class="owner-comment">
+      <div class="owner-icon">飼主</div>
+      <div class="owner-comment-body">
+        <div class="owner-label">飼い主さん</div>
+        最初はそこまで気にしてなかったんです。「この子はお腹が弱い子なんだ」って、先生にもそう言われてたので。
+      </div>
+    </div>
+
+    <div class="interview-slot">
+      <div class="interview-slot-title">インタビュー項目</div>
+      <ul>
+        <li>来院時、飼い主さんから見たワンちゃんの状態</li>
+        <li>いつ頃から症状が出ていたか</li>
+        <li>最初に気になり始めたきっかけ</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <h2 class="section-heading" id="sec2">1年以上続いた下痢。かかりつけでは「体質」と言われていた</h2>
+
+    <p>かかりつけの先生の判断が間違っていたわけではありません。実際、犬の慢性的な消化器症状の多くは食事変更や対症療法で改善します。ただ、一定の割合で「それだけでは良くならない子」がいます。ハナちゃんはそのケースでした。</p>
+
+    <p>フードを何種類も試し、処方食に切り替え、整腸剤も数種類使ったそうです。一時的に良くなることはあっても、しばらくするとまた戻ってしまう。その繰り返しが1年以上続いていました。</p>
+
+    <div class="owner-comment">
+      <div class="owner-icon">飼主</div>
+      <div class="owner-comment-body">
+        <div class="owner-label">飼い主さん</div>
+        「合うフードが見つかれば良くなるはず」って思って、ずっと探してました。でも何を変えても結局同じで……。
+      </div>
+    </div>
+
+    <div class="interview-slot">
+      <div class="interview-slot-title">インタビュー項目</div>
+      <ul>
+        <li>かかりつけでどんな治療・対処をしていたか</li>
+        <li>フード変更など、飼い主さん自身が試したこと</li>
+        <li>「良くならない」と感じていた期間の気持ち</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <h2 class="section-heading" id="sec3">「このままじゃダメだ」と思ったきっかけ</h2>
+
+    <p>飼い主さんがセカンドオピニオンを探すきっかけになったのは、下痢に血が混じるようになったことでした。</p>
+
+    <div class="owner-comment">
+      <div class="owner-icon">飼主</div>
+      <div class="owner-comment-body">
+        <div class="owner-label">飼い主さん</div>
+        さすがにこれは「体質」じゃないんじゃないかって。ネットで調べて、消化器を専門的に診てくれる病院があるって初めて知りました。
+      </div>
+    </div>
+
+    <p>消化器疾患の専門的な診療を行っている病院は、実はそこまで多くありません。飼い主さん自身が「今の状態はおかしい」と感じて、自分で情報を探したからこそ、当院にたどり着いたという経緯です。</p>
+
+    <div class="interview-slot">
+      <div class="interview-slot-title">インタビュー項目</div>
+      <ul>
+        <li>セカンドオピニオンを探そうと思った具体的なきっかけ</li>
+        <li>当院をどうやって見つけたか（検索、紹介、SNS等）</li>
+        <li>来院前にどんな気持ちだったか</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <h2 class="section-heading" id="sec4">まず行った検査と、最初の治療</h2>
+
+    <div class="section-image">※ 写真イメージ（検査の様子、またはエコー画像）</div>
+
+    <p>当院ではまず、血液検査とエコー検査を実施しました。血液検査では軽度の低アルブミン血症が認められ、エコーでは小腸壁の肥厚が確認されました。この時点でいくつかの疾患が鑑別に上がりますが、まずは侵襲の少ない治療から始めます。</p>
+
+    <p>最初に行ったのは、消化器に負担の少ない療法食への切り替えと、内科的治療の開始です。慢性腸症の診療では、この段階で改善する子も多くいます。</p>
+
+    <div class="medical-column">
+      <div class="medical-column-title">慢性腸症の一次治療について</div>
+      <p>犬の慢性腸症は、原因によって「食事反応性腸症」「抗菌薬反応性腸症」「免疫抑制剤反応性腸症（IBD）」などに分類されます。治療は段階的に進めるのが一般的で、まずは食事療法や抗菌薬治療など、身体への負担が少ない方法から開始します。</p>
+      <p>この段階で改善すれば、それ以上の侵襲的な検査が不要になるケースも多くあります。</p>
+    </div>
+
+    <p>ハナちゃんの場合、2週間の一次治療で軟便の頻度はやや減ったものの、十分な改善には至りませんでした。飼い主さんと相談の上、次のステップである内視鏡検査に進むことにしました。</p>
+
+    <div class="interview-slot">
+      <div class="interview-slot-title">インタビュー項目</div>
+      <ul>
+        <li>最初の検査結果を聞いたときの気持ち</li>
+        <li>一次治療中の様子（変化があったか、なかったか）</li>
+        <li>内視鏡検査に進むと言われたときの反応</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <h2 class="section-heading" id="sec5">内視鏡検査で、原因がわかった</h2>
+
+    <div class="section-image">※ 写真イメージ（内視鏡設備、または内視鏡画像）</div>
+
+    <p>内視鏡検査では、十二指腸と大腸の粘膜から複数箇所の組織を採取しました。肉眼的にも粘膜の発赤やむくみが確認され、病理検査の結果、<strong>リンパ球形質細胞性腸炎 ―― いわゆる炎症性腸疾患（IBD）</strong>と診断されました。</p>
+
+    <p>「原因不明」ではなく、ちゃんと名前のつく病気だった。ここが確定したことで、治療の方針が明確になりました。</p>
+
+    <div class="medical-column">
+      <div class="medical-column-title">内視鏡検査でわかること</div>
+      <p>内視鏡検査は、消化管の粘膜を直接観察し、組織を採取（生検）できる検査です。血液検査やエコーでは「何かがおかしい」までは分かっても、確定診断には至らないことが多くあります。内視鏡による組織の病理検査で初めて「何が原因か」を特定でき、適切な治療方針を立てることが可能になります。</p>
+      <p>ただし、内視鏡検査は全身麻酔が必要であり、設備と専門的な技術が求められるため、実施できる病院は限られています。</p>
+    </div>
+
+    <div class="interview-slot">
+      <div class="interview-slot-title">インタビュー項目</div>
+      <ul>
+        <li>診断結果を聞いたときの気持ち（「原因があった」と分かった瞬間）</li>
+        <li>内視鏡検査自体への不安はあったか</li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <h2 class="section-heading" id="sec6">治療を始めて、変わっていったこと</h2>
+
+    <p>確定診断に基づき、免疫抑制療法を開始しました。約1ヶ月で便の状態は目に見えて安定し、3ヶ月後にはほぼ正常便が続くようになりました。</p>
+
+    <div class="owner-comment">
+      <div class="owner-icon">飼主</div>
+      <div class="owner-comment-body">
+        <div class="owner-label">飼い主さん</div>
+        こんなに変わるんだって驚きました。毎日お腹の調子を心配しなくていい生活が、こんなに楽だとは思わなかった。もっと早く調べてもらえばよかったです。
+      </div>
+    </div>
+
+    <p>現在も定期的な通院と投薬管理は続けていますが、ハナちゃんの生活の質は大きく改善しました。飼い主さんの表情も、初診の頃とはまるで違います。</p>
+
+    <div class="interview-slot">
+      <div class="interview-slot-title">インタビュー項目</div>
+      <ul>
+        <li>治療を始めてからの変化（便の状態、元気さ、食欲など）</li>
+        <li>飼い主さん自身の生活や気持ちの変化</li>
+        <li>同じ悩みを持つ飼い主さんに伝えたいこと</li>
+      </ul>
+    </div>
+
+    <!-- Section 7 -->
+    <h2 class="section-heading" id="sec7">同じ悩みを持つ飼い主さんへ</h2>
+
+    <div class="section-image">※ 写真イメージ（院内、または先生の写真）</div>
+
+    <p>消化器のトラブルが続いているとき、「この子はお腹が弱いから仕方ない」で終わってしまうケースは少なくありません。もちろん、体質的にお腹が敏感な子はいます。でも、なかには検査をすれば原因がわかり、適切に治療すれば改善できる子もいます。</p>
+
+    <p>「繰り返す下痢」や「ずっと軟便が続いている」という状態が続いているなら、<strong>一度専門的な検査を受けてみる価値はある</strong>と考えています。</p>
+
+    <p>飼い主さんが「おかしい」と感じている直感は、多くの場合正しいです。その気持ちを大事にして、一歩踏み出していただければと思います。</p>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <p>消化器のお悩み、一度ご相談ください。<br>KINS WITH動物病院 消化器内科では、内視鏡検査による<br>専門的な診療を行っています。</p>
+      <a class="cta-button" href="#">消化器内科について詳しく見る</a>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  Copyright 2026 KINS All rights reserved.
+</footer>
+
+</body>
+</html>
