@@ -1175,18 +1175,34 @@ function handlePhoto(e) {
 
   const reader = new FileReader();
   reader.onload = function(ev) {
-    petPhotoDataURL = ev.target.result;
-    const area = document.getElementById('photoArea');
-    area.classList.add('has-photo');
-    document.getElementById('uploadPlaceholder').classList.add('hidden');
+    const img = new Image();
+    img.onload = function() {
+      // Crop to square from center
+      const size = Math.min(img.width, img.height);
+      const sx = (img.width - size) / 2;
+      const sy = (img.height - size) / 2;
 
-    // Remove existing preview if any
-    const existing = area.querySelector('img');
-    if (existing) existing.remove();
+      const canvas = document.createElement('canvas');
+      const outputSize = 512; // good quality for card
+      canvas.width = outputSize;
+      canvas.height = outputSize;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, sx, sy, size, size, 0, 0, outputSize, outputSize);
 
-    const img = document.createElement('img');
-    img.src = petPhotoDataURL;
-    area.appendChild(img);
+      petPhotoDataURL = canvas.toDataURL('image/jpeg', 0.92);
+
+      const area = document.getElementById('photoArea');
+      area.classList.add('has-photo');
+      document.getElementById('uploadPlaceholder').classList.add('hidden');
+
+      const existing = area.querySelector('img');
+      if (existing) existing.remove();
+
+      const preview = document.createElement('img');
+      preview.src = petPhotoDataURL;
+      area.appendChild(preview);
+    };
+    img.src = ev.target.result;
   };
   reader.readAsDataURL(file);
 }
@@ -1262,11 +1278,14 @@ async function downloadCard(elementId, suffix) {
     return;
   }
 
+  // Set background color based on card type
+  const bgColor = elementId === 'cardFront' ? '#C55E56' : '#FAFAF6';
+
   try {
     const canvas = await html2canvas(el, {
-      scale: 2,
+      scale: 3,
       useCORS: true,
-      backgroundColor: null,
+      backgroundColor: bgColor,
       logging: false
     });
 
