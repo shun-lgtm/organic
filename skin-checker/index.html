@@ -968,8 +968,8 @@
     </div>
 
     <div class="download-group">
-      <button class="dl-btn front-dl" onclick="downloadCard('cardFront', 'share')">📥 共有用カードを保存</button>
-      <button class="dl-btn back-dl" onclick="downloadCard('cardBack', 'result')">📥 結果カードを保存</button>
+      <button class="dl-btn front-dl" onclick="shareCard('cardFront', 'share')">📤 共有用カードを保存・シェア</button>
+      <button class="dl-btn back-dl" onclick="shareCard('cardBack', 'result')">📤 結果カードを保存・シェア</button>
     </div>
 
     <a class="restart-link" onclick="restart()">もう一度チェックする</a>
@@ -1270,16 +1270,16 @@ function generateCards() {
   showScreen('screenResult');
 }
 
-// ─── Download ───
-async function downloadCard(elementId, suffix) {
+// ─── Share / Download ───
+async function shareCard(elementId, suffix) {
   const el = document.getElementById(elementId);
   if (typeof html2canvas === 'undefined') {
     alert('画像生成ライブラリを読み込み中です。少し待ってからもう一度お試しください。');
     return;
   }
 
-  // Set background color based on card type
   const bgColor = elementId === 'cardFront' ? '#C55E56' : '#FAFAF6';
+  const name = (petName || 'card') + '_' + suffix + '.png';
 
   try {
     const canvas = await html2canvas(el, {
@@ -1289,14 +1289,28 @@ async function downloadCard(elementId, suffix) {
       logging: false
     });
 
-    const link = document.createElement('a');
-    const name = petName || 'card';
-    link.download = name + '_' + suffix + '.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+    // Convert canvas to blob
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    const file = new File([blob], name, { type: 'image/png' });
+
+    // Try Web Share API (iOS Safari → 共有シート → 写真アプリに保存可能)
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: petName + ' のけんこうカード'
+      });
+    } else {
+      // Fallback: 通常ダウンロード（PC等）
+      const link = document.createElement('a');
+      link.download = name;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
   } catch (err) {
-    console.error('Download error:', err);
-    alert('画像の生成に失敗しました。スクリーンショットでの保存をお試しください。');
+    // User cancelled share → do nothing
+    if (err.name === 'AbortError') return;
+    console.error('Share/Download error:', err);
+    alert('画像の保存に失敗しました。スクリーンショットでの保存をお試しください。');
   }
 }
 
